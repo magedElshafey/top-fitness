@@ -2,6 +2,7 @@ import React from "react";
 import style from "./footer.module.css";
 import logo from "../../../assets/logo.jpg";
 import { social } from "../../../fakers/data";
+import { Link } from "react-router-dom";
 const Footer = ({ lang }) => {
   return (
     <div className={`pt-4 pb-1 ${style.mainContainer}`}>
@@ -21,11 +22,15 @@ const Footer = ({ lang }) => {
               {lang === "ar" ? "روابط مهمة" : "Important links"}
             </p>
             <ul>
-              <li className="mb-2 text-white">
-                {lang === "ar" ? "من نحن " : "About Us"}
+              <li className="mb-3">
+                <Link className="text-white" to="/about">
+                  {lang === "ar" ? "من نحن " : "About Us"}
+                </Link>
               </li>
-              <li className="mb-2 text-white">
-                {lang === "ar" ? "سياسة الخصوصية" : "Policy"}
+              <li className="mb-3">
+                <Link className="text-white" to="/privacy">
+                  {lang === "ar" ? "سياسة الخصوصية" : "Policy"}
+                </Link>
               </li>
             </ul>
           </div>
@@ -49,10 +54,14 @@ const Footer = ({ lang }) => {
             </p>
             <ul className="d-flex flex-column align-items-center justify-content-center">
               <li className="mb-2 text-white ">
-                {lang === "ar" ? "من نحن " : "About Us"}
+                <Link className="text-white" to="/about">
+                  {lang === "ar" ? "من نحن " : "About Us"}
+                </Link>
               </li>
               <li className="mb-2 text-white">
-                {lang === "ar" ? "سياسة الخصوصية" : "Policy"}
+                <Link className="text-white" to="/privacy">
+                  {lang === "ar" ? "سياسة الخصوصية" : "Policy"}
+                </Link>
               </li>
             </ul>
           </div>

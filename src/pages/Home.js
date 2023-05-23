@@ -5,6 +5,7 @@ import Slider from "../component/Home/Slider/Slider";
 import About from "../component/Home/about/About";
 import Store from "../component/Home/store/Store";
 import { data1, data2 } from "../fakers/data";
+import Rev from "../component/Home/Reveiws/Rev";
 const Home = ({ lang }) => {
   return (
     <div className=" py-4 mt">
@@ -14,6 +15,7 @@ const Home = ({ lang }) => {
       <Store isTitle={true} data={data1} lang={lang} />
       <HeroImg img={hero} isLink={true} path="https://www.google.com" />
       <Store isTitle={false} data={data2} />
+      <Rev lang={lang} />
     </div>
   );
 };

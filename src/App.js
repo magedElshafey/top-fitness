@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import Nav from "./component/layout/navbar/Nav";
 import Footer from "./component/layout/footer/Footer.jsx";
 import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Privacy from "./pages/Privacy";
 const App = () => {
   const lang = useSelector((state) => state.langSlice.lang);
   // handle lang
@@ -44,6 +46,12 @@ const App = () => {
         <Nav lang={lang} />
         <Routes>
           <Route path="/" element={<Home lang={lang} />} />
+        </Routes>
+        <Routes>
+          <Route path="/about" element={<AboutUs lang={lang} />} />
+        </Routes>
+        <Routes>
+          <Route path="/privacy" element={<Privacy lang={lang} />} />
         </Routes>
         <Footer lang={lang} />
       </Router>

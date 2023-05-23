@@ -41,6 +41,15 @@ import twitter from "../assets/socialmedia/icons8-twitter-48.png";
 import tiktok from "../assets/socialmedia/icons8-tiktok-48.png";
 import youtube from "../assets/socialmedia/icons8-youtube-48.png";
 import pintrest from "../assets/socialmedia/icons8-pinterest-48.png";
+// reveiws
+import rev1 from "../assets/rev-01.jpg";
+import rev2 from "../assets/rev-02.jpg";
+import rev3 from "../assets/rev-03.jpg";
+import rev4 from "../assets/rev-04.jpg";
+import rev5 from "../assets/rev-05.jpg";
+import rev6 from "../assets/rev-06.jpg";
+import rev7 from "../assets/rev-07.jpg";
+import rev8 from "../assets/rev-08.jpg";
 export const navLinks = [
   {
     title: "Home",
@@ -102,103 +111,103 @@ export const slider = [
 export const data1 = [
   {
     img: ex1,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex2,
-    path: "www.facebook.com",
+    path: "https://www.facebook.com",
   },
   {
     img: ex3,
-    path: "www.instagram.com",
+    path: "https://www.instagram.com",
   },
   {
     img: ex4,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex5,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex6,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex7,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex8,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex9,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex10,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: ex11,
-    path: "www.google.com",
+    path: "https://www.google.com",
     delay: "1400",
   },
   {
     img: ex12,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
 ];
 export const data2 = [
   {
     img: work1,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work2,
-    path: "www.facebook.com",
+    path: "https://www.facebook.com",
   },
   {
     img: work3,
-    path: "www.instagram.com",
+    path: "https://www.instagram.com",
   },
   {
     img: work4,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work5,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work6,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work7,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work8,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work9,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work10,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
   {
     img: work11,
-    path: "www.google.com",
+    path: "https://www.google.com",
     delay: "1400",
   },
   {
     img: work12,
-    path: "www.google.com",
+    path: "https://www.google.com",
   },
 ];
 export const social = [
@@ -235,3 +244,4 @@ export const social = [
     path: "www.pintrest.com",
   },
 ];
+export const rev = [rev1, rev2, rev3, rev4, rev5, rev6, rev7, rev8];
