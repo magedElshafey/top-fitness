@@ -164,3 +164,6 @@ html {
 .label {
   color: var(--mainColor);
 }
+.mtt {
+  margin-top: 43vh;
+}

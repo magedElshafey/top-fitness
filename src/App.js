@@ -14,6 +14,7 @@ import AboutUs from "./pages/AboutUs";
 import Privacy from "./pages/Privacy";
 import BMI from "./pages/BMI";
 import BmiResult from "./pages/BmiResult";
+import Check from "./pages/Check";
 const App = () => {
   const lang = useSelector((state) => state.langSlice.lang);
   // handle lang
@@ -60,6 +61,9 @@ const App = () => {
         </Routes>
         <Routes>
           <Route path="/calc/details" element={<BmiResult lang={lang} />} />
+        </Routes>
+        <Routes>
+          <Route path="/check" element={<Check lang={lang} />} />
         </Routes>
         <Footer lang={lang} />
       </Router>
