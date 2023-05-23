@@ -1,0 +1,14 @@
+.btn {
+    background-color: var(--mainColor);
+    padding: 7px 15px;
+    border: none;
+    height: auto;
+    color: white;
+    font-weight: bold;
+    margin: 0 5px;
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
+}

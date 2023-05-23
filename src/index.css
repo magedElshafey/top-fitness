@@ -158,18 +158,9 @@ html {
 .mainbtn:hover .more {
   color: var(--text-Color) !important;
 }
-/* .swiper-pagination-bullet {
-  background-color: var(--text-Color);
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  opacity: 0.5;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+.main {
+    min-height: calc(100vh - 384px);
 }
-.swiper-pagination-bullet-active {
-  background-color: var(--mainColor);
-  opacity: 1;
-} */
+.label {
+  color: var(--mainColor);
+}

@@ -12,6 +12,8 @@ import Footer from "./component/layout/footer/Footer.jsx";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Privacy from "./pages/Privacy";
+import BMI from "./pages/BMI";
+import BmiResult from "./pages/BmiResult";
 const App = () => {
   const lang = useSelector((state) => state.langSlice.lang);
   // handle lang
@@ -52,6 +54,12 @@ const App = () => {
         </Routes>
         <Routes>
           <Route path="/privacy" element={<Privacy lang={lang} />} />
+        </Routes>
+        <Routes>
+          <Route path="/calc" element={<BMI lang={lang} />} />
+        </Routes>
+        <Routes>
+          <Route path="/calc/details" element={<BmiResult lang={lang} />} />
         </Routes>
         <Footer lang={lang} />
       </Router>

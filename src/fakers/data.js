@@ -69,12 +69,12 @@ export const navLinks = [
   {
     title: "Examination",
     arabicTitle: "الفحص و الأستشارة",
-    path: "/#check",
+    path: "/check",
   },
   {
     title: "BMR Calculation",
     arabicTitle: "حاسبة الوزن المثالي",
-    path: "/#calc",
+    path: "/calc",
   },
 ];
 export const slider = [
