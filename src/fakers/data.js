@@ -64,7 +64,7 @@ export const navLinks = [
   {
     title: "store",
     arabicTitle: "المتجر",
-    path: "/#store",
+    path: "https://tofitness.shop/",
   },
   {
     title: "Examination",

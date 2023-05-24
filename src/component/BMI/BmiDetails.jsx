@@ -52,7 +52,7 @@ const BmiDetails = ({ lang }) => {
       <h3
         data-aos="zoom-in"
         data-aos-delay="400"
-        className={` mb-4 fs-3 fw-bolder text-uppercase text-center ${style.title}`}
+        className={` mb-5 fs-3 fw-bolder text-uppercase text-center ${style.title}`}
       >
         {lang === "ar" ? "حاسبة الوزن المثالي" : "   BMR Calculation"}
       </h3>
@@ -166,23 +166,23 @@ const BmiDetails = ({ lang }) => {
         >
           <div className="d-flex justify-content-center gap-3 ">
             <div
-              className={`p-5 d-flex flex-column align-items-center gap-2 ${style.mainBox}`}
+              className={`p-5 d-flex flex-column text-center gap-2 ${style.mainBox}`}
             >
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "كتلة الجسم" : "body mass"}
               </p>
-              <AiOutlineUser size={50} className={`${style.icon}`} />
+              <AiOutlineUser size={50} className={`${style.icon} mx-auto`} />
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "قم بملئ البيانات" : "fill the form "}
               </p>
             </div>
             <div
-              className={`p-5 d-flex flex-column align-items-center gap-2 ${style.mainBox}`}
+              className={`p-5 d-flex flex-column gap-2 text-center ${style.mainBox}`}
             >
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "الوزن المثالي" : "Normal Weight"}
               </p>
-              <FaBalanceScale size={50} className={`${style.icon}`} />
+              <FaBalanceScale size={50} className={`${style.icon} mx-auto`} />
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "قم بملئ البيانات" : "fill the form "}
               </p>
@@ -190,25 +190,25 @@ const BmiDetails = ({ lang }) => {
           </div>
           <div className="d-flex justify-content-center gap-3 ">
             <div
-              className={`p-5 d-flex flex-column align-items-center gap-2 ${style.mainBox}`}
+              className={`p-5 d-flex flex-column text-center gap-2 ${style.mainBox}`}
             >
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "السعرات الحرارية" : "Calories"}
               </p>
-              <AiOutlineMenu size={50} className={`${style.icon}`} />
+              <AiOutlineMenu size={50} className={`${style.icon} mx-auto`} />
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "قم بملئ البيانات" : "fill the form "}
               </p>
             </div>
             <div
-              className={`p-5 d-flex flex-column align-items-center gap-2 ${style.mainBox}`}
+              className={`p-5 d-flex flex-column text-center  gap-2 ${style.mainBox}`}
             >
               <p className="fw-bold m-0 p-0">
                 {lang === "ar"
                   ? "احتياجك من البروتين"
                   : "Your need for protein"}
               </p>
-              <CiForkAndKnife size={50} className={`${style.icon}`} />
+              <CiForkAndKnife size={50} className={`${style.icon} mx-auto`} />
               <p className="fw-bold m-0 p-0">
                 {lang === "ar" ? "قم بملئ البيانات" : "fill the form "}
               </p>

@@ -35,7 +35,7 @@ const Rev = ({ lang }) => {
   return (
     <div className="container py-3">
       <h2
-        className={`${style.title} fw-bolder fs-1 mb-3 `}
+        className={`${style.title} fw-bolder text-center fs-1 mb-3 `}
         data-aos="zoom-in"
         data-aos-delay="400"
       >

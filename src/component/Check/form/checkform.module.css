@@ -1,23 +1,24 @@
 .mainDiv {
     background-image: url('https://img.freepik.com/free-vector/flat-man-work-from-home-have-online-videoconference_88138-814.jpg?w=900&t=st=1684850559~exp=1684851159~hmac=bce283cabf7238e001e18ddeecd37df99246a28d4f663e2c6148d0971979a254');
     background-size: cover;
-    object-fit: cover;
+        z-index: 3;
     width: 100vw;
     min-height: 100vh;
-    position: relative;
+    position: relative !important;
 }
-.overlay {
+.mainDiv::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+        z-index: -1;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
 }
-.content {
- z-index: 10 !important;
-}
+/* .content {
+ z-index: 100;   
+} */
 .mainContainer {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 25px;
@@ -30,3 +31,21 @@
 .title {
     color: var(--mainColor);
 }
+.mainContainer {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.inp {
+     border: 1px solid #ccc;
+      padding: 10px;
+    width: 100%;
+     height: 50px;
+    caret-color: var(--mainColor);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.inp:focus {
+     outline: 1px solid var(--mainColor);
+} 

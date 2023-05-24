@@ -15,8 +15,10 @@ import Privacy from "./pages/Privacy";
 import BMI from "./pages/BMI";
 import BmiResult from "./pages/BmiResult";
 import Check from "./pages/Check";
+import Spinner from "./component/spinner/Spinner";
 const App = () => {
   const lang = useSelector((state) => state.langSlice.lang);
+  const [loading, setLoading] = useState(true);
   // handle lang
   useEffect(() => {
     document.documentElement.setAttribute("lang", lang);
@@ -42,31 +44,40 @@ const App = () => {
     }, [pathname]);
     return null;
   }
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
   return (
     <div>
-      <Router>
-        <ScrollToTopAfterChangePage />
-        <Nav lang={lang} />
-        <Routes>
-          <Route path="/" element={<Home lang={lang} />} />
-        </Routes>
-        <Routes>
-          <Route path="/about" element={<AboutUs lang={lang} />} />
-        </Routes>
-        <Routes>
-          <Route path="/privacy" element={<Privacy lang={lang} />} />
-        </Routes>
-        <Routes>
-          <Route path="/calc" element={<BMI lang={lang} />} />
-        </Routes>
-        <Routes>
-          <Route path="/calc/details" element={<BmiResult lang={lang} />} />
-        </Routes>
-        <Routes>
-          <Route path="/check" element={<Check lang={lang} />} />
-        </Routes>
-        <Footer lang={lang} />
-      </Router>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Router>
+          <ScrollToTopAfterChangePage />
+          <Nav lang={lang} />
+          <Routes>
+            <Route path="/" element={<Home lang={lang} />} />
+          </Routes>
+          <Routes>
+            <Route path="/about" element={<AboutUs lang={lang} />} />
+          </Routes>
+          <Routes>
+            <Route path="/privacy" element={<Privacy lang={lang} />} />
+          </Routes>
+          <Routes>
+            <Route path="/calc" element={<BMI lang={lang} />} />
+          </Routes>
+          <Routes>
+            <Route path="/calc/details" element={<BmiResult lang={lang} />} />
+          </Routes>
+          <Routes>
+            <Route path="/check" element={<Check lang={lang} />} />
+          </Routes>
+          <Footer lang={lang} />
+        </Router>
+      )}
     </div>
   );
 };

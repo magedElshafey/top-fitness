@@ -8,7 +8,7 @@ import { data1, data2 } from "../fakers/data";
 import Rev from "../component/Home/Reveiws/Rev";
 const Home = ({ lang }) => {
   return (
-    <div className=" py-4 mt">
+    <div className=" pb-3 mt">
       <HeroImg img={hero} isLink={false} />
       <Slider />
       <About lang={lang} />

@@ -3,7 +3,7 @@ import style from "./heroImg.module.css";
 import { Link } from "react-router-dom";
 const HeroImg = ({ img, isLink, path }) => {
   return (
-    <div className="container">
+    <div className="overflow-x-hidden">
       {isLink && (
         <a
           href={path}
@@ -39,3 +39,9 @@ const HeroImg = ({ img, isLink, path }) => {
 };
 
 export default HeroImg;
+/*
+   <div className="container">
+      
+      
+    </div>
+*/

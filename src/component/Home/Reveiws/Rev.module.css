@@ -3,3 +3,6 @@
   height: 400px;
   object-fit: cover;
 }
+.title {
+  color: var(--mainColor);
+}
