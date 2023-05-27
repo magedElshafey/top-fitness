@@ -3,8 +3,9 @@ import style from "./Rev.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Navigation, Pagination } from "swiper";
-import { rev } from "../../../fakers/data";
-const Rev = ({ lang }) => {
+// import { rev } from "../../../fakers/data";
+const Rev = ({ lang, rev }) => {
+  console.log("hello from rev", rev);
   const swiperOptions = {
     loop: true,
     centeredSlides: false,
@@ -33,7 +34,7 @@ const Rev = ({ lang }) => {
     },
   };
   return (
-    <div className="container py-3">
+    <div className="container pt-5 pb-3">
       <h2
         className={`${style.title} fw-bolder text-center fs-1 mb-3 `}
         data-aos="zoom-in"
@@ -44,7 +45,7 @@ const Rev = ({ lang }) => {
       <Swiper modules={[Autoplay, Navigation, Pagination]} {...swiperOptions}>
         {rev.map((item, index) => (
           <SwiperSlide key={index} className={`pt-5 ${style.slider}`}>
-            <img src={item} alt="reveiw/img" className={style.img} />
+            <img src={item.image} alt="reveiw/img" className={style.image} />
           </SwiperSlide>
         ))}
       </Swiper>

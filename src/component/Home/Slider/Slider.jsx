@@ -3,8 +3,8 @@ import style from "./slider.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
-import { slider } from "../../../fakers/data";
-const Slider = () => {
+// import { slider } from "../../../fakers/data";
+const Slider = ({ slider }) => {
   const swiperOptions = {
     loop: true,
     centeredSlides: false,
@@ -42,10 +42,8 @@ const Slider = () => {
         >
           {slider.map((item, index) => (
             <SwiperSlide key={index} className="slider position-relative">
-              <img className="slideImg" alt={item.title} src={item.img} />
-              <div className="overlay">
-                <p className="text-white slideTitle">{item.title}</p>
-              </div>
+              <img className="slideImg" alt="slider/img" src={item.image} />
+              <div className="overlay"></div>
             </SwiperSlide>
           ))}
         </Swiper>

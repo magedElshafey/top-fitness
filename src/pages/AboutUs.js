@@ -1,10 +1,10 @@
 import React from "react";
 import AboutDetails from "../component/aboutPage/AboutDetails";
 
-const AboutUs = ({ lang }) => {
+const AboutUs = ({ lang, about }) => {
   return (
     <div className="mt py-4">
-      <AboutDetails lang={lang} />
+      <AboutDetails about={about} lang={lang} />
     </div>
   );
 };

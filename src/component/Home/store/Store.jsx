@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./store.module.css";
-const Store = ({ data, isTitle, lang }) => {
+const Store = ({ data, isTitle, lang, title, desc }) => {
   return (
     <div className="container py-4">
       {isTitle && (
@@ -10,28 +10,26 @@ const Store = ({ data, isTitle, lang }) => {
             data-aos="fade-down"
             data-aos-delay="500"
           >
-            {lang === "ar" ? "المنتجات" : "Products"}
+            {title}
           </h2>
           <p
             data-aos="fade-up"
             data-aos-delay="500"
             className="m-0 w-75 mx-auto p-0 lh"
           >
-            المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-            ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-            مجهولة برص مجموعة من الأحرف بشكل
+            {desc}
           </p>
         </div>
       )}
       <div className="row gap-4 justify-content-center">
         {data?.slice(0, 12).map((item, index) => (
           <a
-            href={item.path}
+            href={item.link}
             key={index}
             target="_blank"
             className="col-12  col-md-5 col-lg-3"
           >
-            <img alt="product/img" src={item.img} className={style.mainImg} />
+            <img alt="product/img" src={item.image} className={style.mainImg} />
           </a>
         ))}
       </div>

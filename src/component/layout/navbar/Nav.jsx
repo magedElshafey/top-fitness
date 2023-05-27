@@ -1,23 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { changeLang } from "../../../Redux/lang.js";
 import style from "./nav.module.css";
-import logo from "../../../assets/logo.jpg";
+
 import { navLinks } from "../../../fakers/data";
 import { NavHashLink } from "react-router-hash-link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-const Nav = ({ lang }) => {
+const Nav = ({ lang, logo }) => {
   const [showSideBar, setShowSideBar] = useState(false);
+  const [margin, setMargin] = useState("mt-5");
   const dispatch = useDispatch();
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 30) {
+        setMargin("mt-0");
+      } else {
+        setMargin("mt-5");
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div>
       {/*larg screen view*/}
       <div className="d-none d-md-block p-0 m-0">
         <div
-          className={`d-flex justify-content-between align-items-center py-4  ${style.navContainer}`}
+          className={`d-flex justify-content-between ${margin}  align-items-center py-4  ${style.navContainer}`}
         >
-          <div className="container d-flex justify-content-between align-items-center">
+          <div className="container d-flex justify-content-between  align-items-center">
             {/*logo container*/}
             <div className={style.logoContainer}>
               <img
@@ -79,7 +93,7 @@ const Nav = ({ lang }) => {
       {/*mobile view*/}
       <div className="d-md-none">
         <div
-          className={`d-flex justify-content-between align-items-center py-4  ${style.navContainer}`}
+          className={`d-flex justify-content-between ${margin} align-items-center py-4  ${style.navContainer}`}
         >
           <div className="container d-flex justify-content-between align-items-center">
             <div className={style.logoContainer}>

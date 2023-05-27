@@ -1,9 +1,13 @@
 import React from "react";
 import style from "./footer.module.css";
-import logo from "../../../assets/logo.jpg";
-import { social } from "../../../fakers/data";
 import { Link } from "react-router-dom";
-const Footer = ({ lang }) => {
+import face from "../../../assets/socialmedia/icons8-facebook-48.png";
+import twitter from "../../../assets/socialmedia/icons8-twitter-48.png";
+import youtube from "../../../assets/socialmedia/icons8-youtube-48.png";
+import insta from "../../../assets/socialmedia/icons8-instagram-48.png";
+import tiktok from "../../../assets/socialmedia/icons8-tiktok-48.png";
+import snap from "../../../assets/socialmedia/icons8-snapchat-circled-logo-48.png";
+const Footer = ({ lang, follow, logo }) => {
   return (
     <div className={`pt-4 pb-1 ${style.mainContainer}`}>
       <div className="container">
@@ -71,15 +75,30 @@ const Footer = ({ lang }) => {
             lang === "ar" ? "justify-content-end" : "justify-content-start"
           }`}
         >
-          {social.map((item, index) => (
-            <a target="_blank" key={index} href={item.path}>
-              <img
-                src={item.img}
-                alt="socialmedia/img"
-                className={style.social}
-              />
-            </a>
-          ))}
+          {/*facebook*/}
+          <a target="_blank" href={follow.facebook}>
+            <img src={face} alt="face/img" className={style.social} />
+          </a>
+          {/*insta*/}
+          <a target="_blank" href={follow.instagram}>
+            <img src={insta} alt="face/img" className={style.social} />
+          </a>
+          {/*twitter*/}
+          <a target="_blank" href={follow.twitter}>
+            <img src={twitter} alt="face/img" className={style.social} />
+          </a>
+          {/*youtube*/}
+          <a target="_blank" href={follow.youtube}>
+            <img src={youtube} alt="face/img" className={style.social} />
+          </a>
+          {/*tiktok*/}
+          <a target="_blank" href={follow.tiktok}>
+            <img src={tiktok} alt="face/img" className={style.social} />
+          </a>
+          {/*snap*/}
+          <a target="_blank" href={follow.snapchat}>
+            <img src={snap} alt="face/img" className={style.social} />
+          </a>
         </div>
       </div>
     </div>
@@ -87,3 +106,14 @@ const Footer = ({ lang }) => {
 };
 
 export default Footer;
+/*
+   {social.map((item, index) => (
+            <a target="_blank" key={index} href={item.path}>
+              <img
+                src={item.img}
+                alt="socialmedia/img"
+             
+              />
+            </a>
+          ))}
+*/

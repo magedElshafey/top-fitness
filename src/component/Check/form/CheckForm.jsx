@@ -1,23 +1,78 @@
 import React, { useState } from "react";
 import style from "./checkform.module.css";
-const CheckForm = ({ lang }) => {
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+const CheckForm = ({ lang, cities, api }) => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [gov, setGov] = useState("");
   const [question, setQuestion] = useState("");
   const [goal, setGoal] = useState("");
+  console.log("hello from city in check form", cities);
+  const sendData = async (e) => {
+    e.preventDefault();
+    await fetch(`${api}/orders/store`, {
+      method: "POST",
+      headers: {
+        lang,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        city_id: city,
+        status: question,
+        goal,
+        address: gov,
+      }),
+    })
+      .then((data) => data.json())
+      .then((res) => {
+        console.log(res);
+        if (res.status) {
+          setName("");
+          setPhone("");
+          setGov("");
+          setGoal("");
+          setCity("");
+          setQuestion("");
+          Swal.fire({
+            title: res.message,
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate("/");
+            }
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: res.message,
+          });
+        }
+      });
+  };
   return (
     <div className={style.mainDiv}>
       <div className="container">
         <div className={`row align-items-center  py-5  ${style.content}`}>
           <div className="col-12 col-md-6 mb-4 mb-md-0">
-            <form className={`p-4 ${style.mainContainer} rounded `}>
+            <form
+              onSubmit={(e) => sendData(e)}
+              className={`p-4 ${style.mainContainer} rounded `}
+            >
               <h3
                 className={`fw-bolder m-0 mb-5 p-0 text-center fs-3  ${style.title}`}
               >
                 {lang === "ar"
-                  ? " سجل الآن مجانا وابدأ خطوتك الأولي نحو الرشاقة "
+                  ? " سجل الآن مجانا وابدأ خطواتك الأولي نحو الرشاقة "
                   : "Register now for free and take your first step towards fitness"}
               </h3>
 
@@ -56,9 +111,11 @@ const CheckForm = ({ lang }) => {
                   <option value="">
                     {lang === "ar" ? "اختر مدينتك" : "choose your city"}
                   </option>
-                  <option value="mans">المنصورة</option>
-                  <option value="talkha">طلخا</option>
-                  <option value="alex">أسكندرية</option>
+                  {cities.map((item, index) => (
+                    <option value={item.id} key={index}>
+                      {item.name}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -85,11 +142,9 @@ const CheckForm = ({ lang }) => {
                   <option value="">
                     {lang === "ar" ? "اختر هدفك" : "choose your goal"}
                   </option>
-                  <option value="">
-                    {lang === "ar" ? "اختر هدفك" : "choose your goal"}
-                  </option>
+
                   <option value="lose">
-                    {lang === "ar" ? "نقاص الوزن" : "cutting"}
+                    {lang === "ar" ? "إنقاص الوزن" : "cutting"}
                   </option>
                   <option value="bulk">
                     {lang === "ar" ? "زيادة الكتلة العضلية" : "bulking"}
@@ -120,7 +175,7 @@ const CheckForm = ({ lang }) => {
               </div>
 
               <button className="mainbtn  mx-auto d-flex justify-content-center">
-                {lang === "ar" ? "شاهد النتيجة" : "Show Results"}
+                {lang === "ar" ? "إرسال البيانات" : "Send Data"}
               </button>
             </form>
           </div>
