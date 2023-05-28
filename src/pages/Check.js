@@ -6,7 +6,7 @@ const Check = (lang) => {
   const [loading, setLoading] = useState(true);
   const [cities, setCities] = useState([]);
 
-  const api = "https://fitnes.technomasrsystems.com/api";
+  const api = "http://netflix07.solarsystems.org.in/api";
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`${api}/home`, {

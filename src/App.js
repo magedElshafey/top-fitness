@@ -21,7 +21,8 @@ import Meta from "./component/utiltis/Meta";
 import HeaderContact from "./component/Home/headerContact/HeaderContact";
 import FixedBtns from "./component/utiltis/fixedBtns/FixedBtns";
 const App = () => {
-  const api = "https://fitnes.technomasrsystems.com/api";
+  const api =
+    "http://netflix07.solarsystems.org.in/api";
   const lang = useSelector((state) => state.langSlice.lang);
   const [loading, setLoading] = useState(true);
   const [logo, setLogo] = useState("");

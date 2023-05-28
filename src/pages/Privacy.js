@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PrivacyDetails from "../component/Privacy/PrivacyDetails";
 import Spinner from "../component/spinner/Spinner";
 const Privacy = ({ lang }) => {
-  const api = "https://fitnes.technomasrsystems.com/api";
+  const api = "http://netflix07.solarsystems.org.in/api";
 
   const [loading, setLoading] = useState(true);
   const [desc, setDesc] = useState("");
